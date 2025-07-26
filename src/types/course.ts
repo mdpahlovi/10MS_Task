@@ -204,7 +204,7 @@ export interface FaqSection extends BaseSection {
     }[];
 }
 
-type Section =
+export type Section =
     | BundleItemsSection
     | OffersSection
     | InstructorsSection
