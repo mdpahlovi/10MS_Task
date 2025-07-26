@@ -5,7 +5,6 @@ import CourseFeatureExplanations from "@/components/course/feature_explanations"
 import CourseFeatures from "@/components/course/features";
 import CourseHeader from "@/components/course/header";
 import CourderInstructors from "@/components/course/instructors";
-import CourseMedia from "@/components/course/media";
 import CoursePointers from "@/components/course/pointers";
 import RenderSections from "@/components/course/sections";
 import { getCourseData } from "@/lib/apis";
@@ -24,8 +23,8 @@ export default async function CoursePage({ searchParams }: PageProps) {
         <div className="min-h-screen">
             <CourseHeader course={data} />
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 container mx-auto px-6">
-                <div className="lg:col-span-2 space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-6 container mx-auto px-6">
+                <div className="mt-6 space-y-6">
                     <RenderSections
                         sections={[
                             { type: "instructors", component: CourderInstructors },
@@ -38,12 +37,9 @@ export default async function CoursePage({ searchParams }: PageProps) {
                     />
                 </div>
 
-                <div className="lg:col-span-1 space-y-6">
-                    <div>
-                        <CourseMedia media={data.media} />
-                        <CourseCta cta_text={data.cta_text} />
-                        <CourseChecklist checklist={data.checklist} />
-                    </div>
+                <div className="sticky top-0 px-5 pb-5 border border-t-0 h-max">
+                    <CourseCta cta_text={data.cta_text} />
+                    <CourseChecklist checklist={data.checklist} />
                 </div>
             </div>
         </div>

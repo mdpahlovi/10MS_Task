@@ -17,7 +17,7 @@ export default function NavHeader() {
     return (
         <nav className="border-b">
             <div className="h-16 container mx-auto px-6 flex items-center justify-between">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">LearnHub</h2>
+                <h2 className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">LearnHub</h2>
                 <button onClick={() => createQueryString()} className="flex items-center gap-1 rounded border px-2 py-[2px]">
                     <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_9494_69309)">
