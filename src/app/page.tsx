@@ -1,6 +1,7 @@
 import CourseAbout from "@/components/course/about";
 import CourseChecklist from "@/components/course/checklist";
 import CourseCta from "@/components/course/cta_button";
+import CourseFeatureExplanations from "@/components/course/feature_explanations";
 import CourseFeatures from "@/components/course/features";
 import CourseHeader from "@/components/course/header";
 import CourderInstructors from "@/components/course/instructors";
@@ -17,6 +18,8 @@ export default async function CoursePage({ searchParams }: PageProps) {
     const lang = (await searchParams).lang;
     const data = await getCourseData(lang);
 
+    console.log({ data });
+
     return (
         <div className="min-h-screen">
             <CourseHeader course={data} />
@@ -28,6 +31,7 @@ export default async function CoursePage({ searchParams }: PageProps) {
                             { type: "instructors", component: CourderInstructors },
                             { type: "features", component: CourseFeatures },
                             { type: "pointers", component: CoursePointers },
+                            { type: "feature_explanations", component: CourseFeatureExplanations },
                             { type: "about", component: CourseAbout },
                         ]}
                         course={data}
