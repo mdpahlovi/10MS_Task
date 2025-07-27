@@ -17,14 +17,12 @@ export default async function CoursePage({ searchParams }: PageProps) {
     const lang = (await searchParams).lang;
     const data = await getCourseData(lang);
 
-    console.log({ data });
-
     return (
         <div className="min-h-screen">
             <CourseHeader course={data} />
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-6 container mx-auto px-6">
-                <div className="mt-6 space-y-6">
+            <div className="layout mb-6">
+                <div className="mt-6 space-y-6 order-last lg:order-first">
                     <RenderSections
                         sections={[
                             { type: "instructors", component: CourderInstructors },
@@ -37,7 +35,7 @@ export default async function CoursePage({ searchParams }: PageProps) {
                     />
                 </div>
 
-                <div className="sticky top-0 px-5 pb-5 border border-t-0 h-max">
+                <div className="px-5 pb-5 border border-t-0 h-max order-first lg:order-last lg:sticky lg:top-16 ">
                     <CourseCta cta_text={data.cta_text} />
                     <CourseChecklist checklist={data.checklist} />
                 </div>

@@ -140,4 +140,8 @@
     li {
         @apply text-sm font-paragraph leading-relaxed;
     }
+
+    .layout {
+        @apply grid grid-cols-1 lg:grid-cols-[1fr_352px] xl:grid-cols-[1fr_400px] gap-x-6 container mx-auto px-6;
+    }
 }

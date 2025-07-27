@@ -38,11 +38,9 @@ export default function CourseMedia({ media }: { media: Media[] }) {
         emblaMainApi.on("select", onSelect).on("reInit", onSelect);
     }, [emblaMainApi, onSelect]);
 
-    console.log({ media });
-
     return (
-        <div className="embla space-y-5">
-            <div className="embla__viewport" ref={emblaMainRef}>
+        <div className="embla">
+            <div className="embla__viewport mb-5" ref={emblaMainRef}>
                 <div className="embla__container">
                     {media.map((slide, idx) => (
                         <div key={idx} className="embla__slide">

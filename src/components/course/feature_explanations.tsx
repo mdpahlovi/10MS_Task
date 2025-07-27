@@ -10,8 +10,8 @@ export default function CourseFeatureExplanations({ section }: { section: Featur
             <div className="grid grid-cols-1 gap-5">
                 {section.values.map((feature) => (
                     <Card key={feature.id}>
-                        <CardContent className="grid grid-cols-3">
-                            <div className="col-span-2">
+                        <CardContent className="grid sm:grid-cols-3 gap-5">
+                            <div className="col-span-2 order-last sm:order-first">
                                 <h4 className="mb-5">{feature.title}</h4>
                                 <div className="flex flex-col gap-y-2">
                                     {feature.checklist.map((item, idx) => (
@@ -22,7 +22,7 @@ export default function CourseFeatureExplanations({ section }: { section: Featur
                                     ))}
                                 </div>
                             </div>
-                            <div>
+                            <div className="order-first sm:order-last">
                                 <Image src={feature.file_url} alt={feature.title} width={512} height={512} />
                             </div>
                         </CardContent>

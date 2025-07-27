@@ -6,7 +6,7 @@ export default function CourseFeatures({ section }: { section: FeaturesSection }
     return (
         <section>
             <h2 className="mb-4">{section.name}</h2>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid sm:grid-cols-2 gap-5">
                 {section.values.map((feature) => (
                     <Card key={feature.id}>
                         <CardContent className="flex flex-col gap-5">
